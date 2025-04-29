@@ -137,8 +137,8 @@ def hangman(secret_word , with_help, item = []):
       progress = get_word_progress(secret_word, letters_guessed)
       progress = list(progress)
       secret_word = list(secret_word)
-      y = len(secret_word)
-      y = y - 1
+      y = len(secret_word) 
+      y -= 1
       while True:
           x = random.randint(0, y)
           if progress[x] == "*":
@@ -253,7 +253,12 @@ if __name__ == "__main__":
     # To test your game, uncomment the following three lines.
 
     secret_word = choose_word(wordlist)
-    with_help = True
+    with_help = input("Do you want to play with help? (y/n): ").lower().strip()
+    if with_help == "y" or with_help == "yes":
+       with_help = True
+    else:
+       with_help = False
+    print(with_help)
     hangman(secret_word, with_help)
 
     # After you complete with_help functionality, change with_help to True
