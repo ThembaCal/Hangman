@@ -258,7 +258,7 @@ if __name__ == "__main__":
        with_help = True
     else:
        with_help = False
-    print(with_help)
+    # print(with_help)
     hangman(secret_word, with_help)
 
     # After you complete with_help functionality, change with_help to True
